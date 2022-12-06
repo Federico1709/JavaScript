@@ -5,23 +5,24 @@ var contador = 0;
 var auxmayor = 0;
 var auxmenor = 0;
 var promedio = 0;
-var numero= 1;
 
-while (numero != 0);
-     numero=prompt("Ingrese un numero");
+var numero=parseInt(prompt("Ingrese un numero"));
+while (numero != 0){
+     
+     if (numero > 0 || numero <=auxmenor) {
+          auxmenor = numero;
+     }
 
      if (numero > auxmayor) {
           auxmayor = numero;
      }
-     if (numero < auxmenor && numero != 0) {
-          auxmenor = numero;
-     }
+ 
      promedio = (numero + promedio);
 
      contador++;
+     numero=parseInt(prompt("Ingrese un numero"));
 
- 
-
+} 
 
 alert(`El mayor numero es ${auxmayor}
 El menor numero es ${auxmenor}
