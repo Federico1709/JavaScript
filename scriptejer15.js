@@ -2,28 +2,23 @@
 // con la propiedad radio. Nota: Cree dos métodos para calcular el área y el perímetro. El 
 // radio del círculo lo proporcionará el usuario.
 
-function Circulo(radio, area, perimetro){
+function Circulo(radio){
     this.radio = radio;
-    this.area = area;
-    this.perimetro = perimetro;
+    this.area = () => Math.PI*this.radio**2
+    this.perimetro= ()=> 2*Math.PI*this.radio
     this.mostrarCirculo = mostrarCirculo;
+    
 }
-const PI=3.141592653589793;
-var radio = prompt("Ingrese el radio de su circulo")
-var circulo= new Circulo(radio,area,perimetro)
 
-var area=function calcularArea(PI){
-    var resultado = PI*radio^2;
-}
-var perimetro= function calcularPerimetro(PI){
-    var resultado = 2*PI*circulo.radio;
-}
+var radio = parseInt(prompt("Ingrese el radio de su circulo"))
+var circulo = new Circulo(radio)
+
 
 function mostrarCirculo(){
     var resultado= `El radio de su circulo es ${this.radio}
-    El area es ${this.area}
-    El perimetro es ${this.perimetro}`
-    console.log(resultado);
+    El area es ${circulo.area()}
+    El perimetro es ${circulo.perimetro()}`
+    console.log(resultado)
 }
 
 circulo.mostrarCirculo();
